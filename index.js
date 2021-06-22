@@ -48,7 +48,7 @@ var app = new Vue({
       }
       this.loading = true
       axios({
-        url: 'http://49.73.154.68:50322/wallet',
+        url: '//49.73.154.68:50322/wallet',
         method: 'post',
         headers: {
           'Accept': '*/*',
