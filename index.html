@@ -1,1 +1,40 @@
-1
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>寻找测试(FSV)币</title>
+		<link rel="stylesheet" href="style.css" />
+    <!-- 先引入 Vue -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.14/vue.js"></script>
+    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.14/vue.min.js"></script> -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+	</head>
+	<body>
+		<section class="main" id="app">
+			<header class="header">
+				<img src="./img/logo144.png" class="logo" alt="" />
+				<div class="switch" @click="switchLang">
+					<span v-if="langType === 'cn'">ENGLISH</span>
+					<span v-if="langType === 'en'">中文</span>
+					<img class="switch-icon" src="./img/switch.svg" alt="" />
+				</div>
+			</header>
+			<main class="content">
+				<h1>{{lang['tit']}}</h1>
+				<p>{{lang['p1']}}</p>
+				<p>{{lang['p2']}}</p>
+				<div class="input-wrap">
+					<input class="input" v-model="address" autocomplete="off" type="text" :placeholder="lang['placeholder']" />
+					<button @click="submit" class="sub-btn" type="button"><img class="btn-icon" src="./img/send.svg" alt="" /> {{lang['btn']}}</button>
+				</div>
+			</main>
+      <div class="alert" v-show="MsgVisible">
+        <p class="message">{{message}}</p>
+      </div>
+		</section>
+	</body>
+
+  <script src="./index.js"></script>
+</html>
