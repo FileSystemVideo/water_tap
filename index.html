@@ -14,12 +14,18 @@
 	<body>
 		<section class="main" id="app">
 			<header class="header">
-				<img src="./img/logo144.png" class="logo" alt="" />
-				<div class="switch" @click="switchLang">
-					<span v-if="langType === 'cn'">ENGLISH</span>
-					<span v-if="langType === 'en'">中文</span>
-					<img class="switch-icon" src="./img/switch.svg" alt="" />
-				</div>
+				<img src="./img/logo.png" class="logo" alt="" />
+				<div class="lang-wrap">
+          <div class="switch" @click="showLangList = !showLangList">
+            <span v-if="langType === 'cn'">ENGLISH</span>
+            <span v-if="langType === 'en'">中文</span>
+            <img class="switch-icon" src="./img/switch.png" alt="" />		
+          </div>
+          <div class="translate-btns" v-show="showLangList">
+            <button @click="switchLang('cn')" class="nav-item translate" id="zh">简体中文</button>
+            <button @click="switchLang('en')" class="nav-item translate" id="en">English</button>
+          </div>
+      </div>
 			</header>
 			<main class="content">
 				<h1>{{lang['tit']}}</h1>
@@ -27,7 +33,7 @@
 				<p>{{lang['p2']}}</p>
 				<div class="input-wrap">
 					<input class="input" v-model="address" autocomplete="off" type="text" :placeholder="lang['placeholder']" />
-					<button @click="submit" class="sub-btn" type="button"><img class="btn-icon" src="./img/send.svg" alt="" /> {{lang['btn']}}</button>
+					<button @click="submit" class="sub-btn" type="button"><img class="btn-icon" src="./img/icon.png" alt="" /> {{lang['btn']}}</button>
 				</div>
 			</main>
       <div class="alert" v-show="MsgVisible">

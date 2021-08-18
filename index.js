@@ -20,8 +20,9 @@ var langJson = {
 var app = new Vue({
   el: '#app',
   data: {
-    langType: 'cn',
-    lang: langJson['cn'],
+    showLangList: false,
+    langType: 'en',
+    lang: langJson['en'],
     address: '',
     MsgVisible: false,
     message: '',
@@ -77,9 +78,10 @@ var app = new Vue({
         that.loading = false
       });
     },
-    switchLang: function () {
-      this.langType = this.langType === 'cn' ? 'en' : 'cn'
+    switchLang: function (lang) {
+      this.langType = lang
       this.lang = langJson[this.langType]
+      this.showLangList = false
     },
 
     showMsg: function (msg) {
