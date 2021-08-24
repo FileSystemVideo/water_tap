@@ -3,28 +3,36 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, viewport-fit=cover"
+		/>
 		<title>Looking for Test (FSV) Coins</title>
 		<link rel="stylesheet" href="style.css" />
-    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.14/vue.js"></script> -->
-    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.14/vue.min.js"></script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+		<!-- 调试工具 -->
+		<script src="//cdn.bootcss.com/vConsole/3.2.0/vconsole.min.js"></script>
+		<script>
+			var vConsole = new VConsole()
+		</script>
+		<script src="//cdn.bootcdn.net/ajax/libs/vue/2.6.14/vue.js"></script>
+		<!-- <script src="//cdn.bootcdn.net/ajax/libs/vue/2.6.14/vue.min.js"></script> -->
+		<script src="//cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
 	</head>
 	<body>
 		<section class="main" id="app">
 			<header class="header">
 				<img src="./img/logo.png" class="logo" alt="" />
 				<div class="lang-wrap">
-          <div class="switch" @click="showLangList = !showLangList">
-            <span v-if="langType === 'en'">ENGLISH</span>
-            <span v-if="langType === 'cn'">中文</span>
-            <img class="switch-icon" src="./img/switch.png" alt="" />		
-          </div>
-          <div class="translate-btns" v-show="showLangList">
-            <button @click="switchLang('cn')" class="nav-item translate" id="zh">简体中文</button>
-            <button @click="switchLang('en')" class="nav-item translate" id="en">English</button>
-          </div>
-      </div>
+					<div class="switch" @click="showLangList = !showLangList">
+						<span v-if="langType === 'en'">ENGLISH</span>
+						<span v-if="langType === 'cn'">中文</span>
+						<img class="switch-icon" src="./img/switch.png" alt="" />
+					</div>
+					<div class="translate-btns" v-show="showLangList">
+						<button @click="switchLang('cn')" class="nav-item translate" id="zh">简体中文</button>
+						<button @click="switchLang('en')" class="nav-item translate" id="en">English</button>
+					</div>
+				</div>
 			</header>
 			<main class="content">
 				<h1>{{lang['tit']}}</h1>
@@ -32,14 +40,19 @@
 				<p>{{lang['p2']}}</p>
 				<div class="input-wrap">
 					<input class="input" v-model="address" autocomplete="off" type="text" :placeholder="lang['placeholder']" />
-					<button @click="submit" class="sub-btn" type="button"><img class="btn-icon" src="./img/icon.png" alt="" /> {{lang['btn']}}</button>
+					<button v-if="loading" class="sub-btn" type="button">
+						<img class="loading-icon" src="./img/loading.svg" alt="" /> {{lang['btn']}}
+					</button>
+					<button v-else @click="submit" class="sub-btn" type="button">
+						<img class="btn-icon" src="./img/icon.png" alt="" /> {{lang['btn']}}
+					</button>
 				</div>
 			</main>
-      <div class="alert" v-show="MsgVisible">
-        <p class="message">{{message}}</p>
-      </div>
+			<div class="alert" v-show="MsgVisible">
+				<p class="message">{{message}}</p>
+			</div>
 		</section>
 	</body>
 
-  <script src="./index.js"></script>
+	<script src="./index.js"></script>
 </html>

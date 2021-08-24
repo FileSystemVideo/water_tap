@@ -176,6 +176,11 @@ body {
 .translate-btns button:first-child {
   margin-bottom: 10px;
 }
+.loading-icon {
+  display: block;
+  width: 42px;
+  margin-right: 4px;
+}
 
 @media screen and (max-width: 800px) {
   body {

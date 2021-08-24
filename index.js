@@ -61,22 +61,28 @@ var app = new Vue({
         }
       })
       .then(function (response) {
+        console.log('axios success')
         console.log(response)
-        that.loading = false
+        setTimeout(function () { 
+          that.loading = false
+        }, 400)
         var data = response.data
         if (data && data.info) {
           that.showMsg(data.info)
         }
       })
       .catch(function (error) {
-        console.log(error.response);
+        console.log('axios error')
+        console.log(error)
         var data = error.response.data
         if (data && data.info) {
           that.showMsg(data.info)
         } else {
           that.showMsg(that.lang['message'])
         }
-        that.loading = false
+        setTimeout(function () { 
+          that.loading = false
+        }, 400)
       });
     },
     switchLang: function (lang) {
