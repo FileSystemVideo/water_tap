@@ -120,10 +120,12 @@ body {
 .alert {
   position: fixed;
   top: 30%;
-  left: 50%;
+  left: 0;
+  right: 0;
   max-width: 400px;
   width: 60%;
-  margin-left: -200px;
+  margin: auto;
+  /* margin-left: -200px; */
   background-color: rgba(0, 0, 0, 0.6);
   color: #fff;
   text-align: center;
@@ -131,7 +133,7 @@ body {
   z-index: 1000;
   padding: 20px 15px;
   border-radius: 8px;
-  line-height: 22px;
+  line-height: 1.65;
 }
 .lang-wrap {
   position: relative;

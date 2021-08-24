@@ -56,7 +56,8 @@ var app = new Vue({
           'Content-Type': 'application/x-www-form-urlencoded'
         },
         params: {
-          address: address
+          address: address,
+          lang: this.langType
         }
       })
       .then(function (response) {
@@ -95,7 +96,7 @@ var app = new Vue({
       this.MsgVisible = true
       this.timer = setTimeout(function () {
         that.MsgVisible = false
-      }, 3000)
+      }, 2500)
     } 
   }
 })
