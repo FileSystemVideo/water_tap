@@ -49,7 +49,7 @@ var app = new Vue({
       }
       this.loading = true
       axios({
-        url: 'http://49.73.154.68:50322/wallet',
+        url: 'https://dapp.fs.video/wallet',
         method: 'post',
         headers: {
           'Accept': '*/*',
