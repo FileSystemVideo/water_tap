@@ -5,7 +5,7 @@ var langJson = {
     p2: '我们会在每天的8点，12点，16点，进行测试FSV的发放（迪拜时间）',
     placeholder: '请输入测试钱包地址',
     btn: '提交',
-    message: '领取错误，请检查钱包地址后重试'
+    message: '领取错误，请稍后后重试'
   },
   en: {
     tit: 'Looking for Test (FSV) Coins？',
@@ -13,7 +13,7 @@ var langJson = {
     p2: 'We will test FSV distribution daily at 8am,12am,4pm（Dubai Time）',
     placeholder: 'Test wallet address',
     btn: 'SUBMIT',
-    message: 'Receive a mistake, please check the wallet address and try again'
+    message: 'Receive error, please try again later'
   }
 }
 
@@ -55,6 +55,7 @@ var app = new Vue({
           'Accept': '*/*',
           'Content-Type': 'application/x-www-form-urlencoded'
         },
+        timeout: 10000,
         params: {
           address: address,
           lang: this.langType
@@ -73,16 +74,16 @@ var app = new Vue({
       })
       .catch(function (error) {
         console.log('axios error')
-        console.log(error)
-        var data = error.response.data
-        if (data && data.info) {
-          that.showMsg(data.info)
-        } else {
-          that.showMsg(that.lang['message'])
-        }
+        console.log(error.response)
         setTimeout(function () { 
           that.loading = false
         }, 400)
+        var response = error.response
+        if (error && response && response.data && response.data.info) {
+          that.showMsg(response.data.info)
+        } else {
+          that.showMsg(that.lang['message'])
+        }
       });
     },
     switchLang: function (lang) {
