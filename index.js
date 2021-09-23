@@ -1,7 +1,7 @@
 var langJson = {
   cn: {
     tit: '寻找测试 (FSV) 币？',
-    p1: '填写您的钱包地址以获得500FSV，每钱包地址只能获取一次',
+    p1: '填写您的钱包地址以获得5000FSV，每钱包地址只能获取一次',
     p2: '我们会在每天的8点，12点，16点，进行测试FSV的发放（迪拜时间）',
     placeholder: '请输入测试钱包地址',
     btn: '提交',
@@ -9,7 +9,7 @@ var langJson = {
   },
   en: {
     tit: 'Looking for Test (FSV) Coins？',
-    p1: 'Fill out your test wallet address to receive 500 FSV , a purse can only be used once',
+    p1: 'Fill out your test wallet address to receive 5000 FSV , a purse can only be used once',
     p2: 'We will test FSV distribution daily at 8am,12am,4pm（Dubai Time）',
     placeholder: 'Test wallet address',
     btn: 'SUBMIT',
