@@ -9,7 +9,7 @@ var langJson = {
   },
   en: {
     tit: 'Looking for Test (FSV) Coins？',
-    p1: 'Fill out your test wallet address to receive 5000 FSV , a purse can only be used once',
+    p1: 'Fill out your test wallet address to receive 100 FSV , a purse can only be used once',
     p2: 'We will test FSV distribution daily at 8am,12am,4pm（Dubai Time）',
     placeholder: 'Test wallet address',
     btn: 'SUBMIT',
