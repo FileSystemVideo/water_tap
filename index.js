@@ -1,5 +1,6 @@
 var langJson = {
   cn: {
+    stop: 'FSV主网即将上线，测试币领取停止',
     tit: '寻找测试 (FSV) 币？',
     p1: '填写您的钱包地址以获得100FSV，每钱包地址只能获取一次',
     p2: '我们会在每天的8点，12点，16点，进行测试FSV的发放（迪拜时间）',
@@ -8,6 +9,7 @@ var langJson = {
     message: '领取错误，请稍后后重试'
   },
   en: {
+    stop: 'The FSV mainnet will be launched soon, and the withdrawal of test coins will stop',
     tit: 'Looking for Test (FSV) Coins？',
     p1: 'Fill out your test wallet address to receive 100 FSV , a purse can only be used once',
     p2: 'We will test FSV distribution daily at 8am,12am,4pm（Dubai Time）',
